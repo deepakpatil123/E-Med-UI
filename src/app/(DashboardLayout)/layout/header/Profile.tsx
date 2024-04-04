@@ -73,18 +73,10 @@ const Profile = () => {
           <ListItemIcon>
             <IconUser width={20} />
           </ListItemIcon>
-          <ListItemText>
-            {auth?.user?.data?.emp
-              ? auth?.user?.data?.emp.name
-              : auth?.user?.data?.user.name}
-          </ListItemText>
+          <ListItemText>{auth?.user?.user?.name}</ListItemText>
         </MenuItem>
         <MenuItem>
-          <ListItemText>
-            {auth?.user?.data?.emp
-              ? auth?.user?.data?.emp.name
-              : auth?.user?.data?.user.name}
-          </ListItemText>
+          <ListItemText>{auth?.user?.user?.email_id}</ListItemText>
         </MenuItem>
         <Box mt={1} py={1} px={2}>
           <Button
@@ -98,11 +90,7 @@ const Profile = () => {
         </Box>
         <Box mt={1} py={1} px={2}>
           <Button
-            onClick={() =>
-              auth?.signOut(
-                auth?.user?.message?.includes("Admin") ? "admin" : "employee"
-              )
-            }
+            onClick={() => auth?.signOut()}
             variant="outlined"
             color="primary"
             fullWidth

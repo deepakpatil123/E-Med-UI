@@ -37,7 +37,7 @@ const SecClaim = () => {
     "Closed after Approval",
   ];
   const auth: any = useAuth();
-  const roleID = auth?.user?.data?.user?.role;
+  const roleID = auth?.user?.user?.role?.id;
 
   const [claimData, setClaimData] = useState<any>([]);
   const [reimbursementForm, setReimbursementForm] = useState(false);
@@ -609,7 +609,7 @@ const SecClaim = () => {
     setRoleNum(res.data.data);
   };
 
-  const roleOfUser: any = roleNum.find((e: any) => e._id === roleID);
+  const roleOfUser: any = roleNum.find((e: any) => e.id === roleID);
 
   const getData = async () => {
     const res = await axios.get(

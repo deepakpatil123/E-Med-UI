@@ -26,7 +26,7 @@ import PermissionForm from "../../components/forms/PermissionForm/PermissionForm
 
 const SecPermission = () => {
   const auth: any = useAuth();
-  const roleID = auth?.user?.data?.user?.role;
+  const roleID = auth?.user?.user?.role?.id;
   const [perform, setPerForm] = useState(false);
   const [roles, setroles] = useState([]);
   const [roleNum, setRoleNum] = useState([]);
@@ -55,7 +55,7 @@ const SecPermission = () => {
   };
   const [permissionData, setPermissionData] = useState<any>([]);
 
-  const roleOfUser: any = roleNum.find((e: any) => e._id === roleID);
+  const roleOfUser: any = roleNum.find((e: any) => e.id === roleID);
 
   const [remark, setRemark] = useState("");
   const [status, setStatus] = useState("");

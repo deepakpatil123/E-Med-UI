@@ -25,9 +25,9 @@ const Sidebar = ({
 
   const auth: any = useAuth();
 
-  const roleID = auth?.user?.data?.user?.role;
+  const roleID = auth?.user?.user?.role?.id;
 
-  const role = auth?.user?.message?.includes("Admin");
+  const role = auth?.user?.message?.includes("user");
 
   const fetchFun = async () => {
     const res: any = await axios.get(
@@ -37,7 +37,7 @@ const Sidebar = ({
     setRoleNum(res.data.data);
   };
 
-  const roleOfUser: any = roleNum.find((e: any) => e._id === roleID);
+  const roleOfUser: any = roleNum.find((e: any) => e.id === roleID);
 
   useEffect(() => {
     fetchFun();

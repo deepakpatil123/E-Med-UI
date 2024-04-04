@@ -175,7 +175,7 @@ const Dashboard = () => {
 
   if (!auth?.user?.message) {
     return <p>Loading....</p>;
-  } else if (auth?.user?.message?.includes("Admin")) {
+  } else if (auth?.user?.message?.includes("user")) {
     return (
       <PageContainer title="Welcome to Dashboard" description="">
         {/* <DashboardNew> */}
@@ -329,7 +329,8 @@ const Dashboard = () => {
         {/* </DashboardNew> */}
       </PageContainer>
     );
-  } else {
+  }
+   else {
     return (
       <Grid 
         component="main"

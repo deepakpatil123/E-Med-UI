@@ -11,6 +11,8 @@ const SidebarItems = ({ toggleMobileSidebar, role }: any) => {
   const pathname = usePathname();
   const pathDirect = pathname;
 
+  console.log(auth, "AUTTTTTTTTTTTTTTTTTTTTTTTTTTTH");
+
   const userRole = auth?.user?.message;
 
   const adminMenu = Menuitems.Admin[role];
@@ -21,7 +23,7 @@ const SidebarItems = ({ toggleMobileSidebar, role }: any) => {
       <List sx={{ pt: 0 }} className="sidebarNav" component="div">
         {!userRole ? (
           <p>Loading....</p>
-        ) : userRole && userRole.includes("Admin") ? (
+        ) : userRole && userRole.includes("user") ? (
           adminMenu?.map((item: any) => (
             <NavItem
               item={item}
@@ -31,14 +33,7 @@ const SidebarItems = ({ toggleMobileSidebar, role }: any) => {
             />
           ))
         ) : (
-          employeeMenu.map((item: any) => (
-            <NavItem
-              item={item}
-              key={item.id}
-              pathDirect={pathDirect}
-              onClick={toggleMobileSidebar}
-            />
-          ))
+          ""
         )}
       </List>
     </Box>

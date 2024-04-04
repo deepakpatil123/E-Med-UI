@@ -178,8 +178,8 @@ export default function AuthProvider({ children }: AuthProviderProps) {
   //     const response = await axios.post(
   //       endpoint,
   //       {
-  //         email: user_name,
-  //         password: password,
+  //         email: "deepak@gmail.com",
+  //         // password: password,
   //       },
   //       {
   //         headers: {
