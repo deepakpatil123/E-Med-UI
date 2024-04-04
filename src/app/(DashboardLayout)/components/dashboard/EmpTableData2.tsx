@@ -68,18 +68,18 @@ export const OverviewLatestOrders2 = (props: any) => {
 
   return (
     <Card sx={sx}>
-      <CardHeader title="Applied Claims" />
+      <CardHeader sx={{borderBottom:"1px solid #e3e6f0"}} title="Applied Claims" />
       <Box sx={{ minWidth: 700 }}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ fontWeight: "700" }}>S No.</TableCell>{" "}
-              <TableCell sx={{ fontWeight: "700" }}>Name</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>Designation</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>Relation</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>Current Status</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>More Details</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>Delete Claim</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>S No.</TableCell>{" "}
+              <TableCell sx={{ fontWeight: "600" }}>Name</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>Designation</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>Relation</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>Current Status</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>More Details</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>Delete Claim</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -108,7 +108,7 @@ export const OverviewLatestOrders2 = (props: any) => {
                           setClaim(order);
                         }}
                       >
-                        <VisibilityIcon />
+                        <VisibilityIcon sx={{color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px"}} />
                       </IconButton>
                     </TableCell>
                     {order.currentStatus === "Open" ? (
@@ -119,7 +119,7 @@ export const OverviewLatestOrders2 = (props: any) => {
                           }}
                           onClick={() => handleDeleteClaim(order._id)}
                         >
-                          <DeleteIcon />
+                          <DeleteIcon sx = {{color:"#f00", border:"1px solid #f00", padding:"2px", borderRadius:"3px"}}/>
                         </IconButton>
                       </TableCell>
                     ) : (

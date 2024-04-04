@@ -175,15 +175,16 @@ const Dashboard = () => {
 
   if (!auth?.user?.message) {
     return <p>Loading....</p>;
-  } else if (auth?.user?.message?.includes("User")) {
+  } else if (auth?.user?.message?.includes("Admin")) {
     return (
       <PageContainer title="Welcome to Dashboard" description="">
-        <DashboardNew>
+        {/* <DashboardNew> */}
           <>
             <Box
               sx={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
+                gap: "20px",
                 // gap: "20px",
                 // bgcolor: "background.paper",
                 borderRadius: 1,
@@ -206,7 +207,7 @@ const Dashboard = () => {
                 <AdminBox
                   difference={16}
                   positive={false}
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "100%" }}
                   value={allapprovedClaimCount}
                   title="Approved Claims"
                   backgroundColor="#fff4de"
@@ -215,7 +216,7 @@ const Dashboard = () => {
               </Grid>
               <Grid xs={12} sm={6} lg={3}>
                 <AdminBox
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "auto" }}
                   value={allrejectedClaimCount}
                   title="Rejected Claims"
                   backgroundColor="#dcfce7"
@@ -224,7 +225,7 @@ const Dashboard = () => {
               </Grid>
               <Grid xs={12} sm={6} lg={3}>
                 <AdminBox
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "auto"}}
                   value={allclaimPending}
                   title="Pending Claims"
                   backgroundColor="#f1e2ff"
@@ -236,6 +237,7 @@ const Dashboard = () => {
               sx={{
                 display: "grid",
                 gridTemplateColumns: "repeat(4, 1fr)",
+                 gap: "20px",
                 // gap: "20px",
                 // bgcolor: "background.paper",
                 borderRadius: 1,
@@ -247,7 +249,7 @@ const Dashboard = () => {
                 <AdminBox
                   difference={12}
                   positive
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "auto"}}
                   value={ALLPermissions?.length}
                   title="Total Permissions"
                   backgroundColor="#ffe2e6"
@@ -259,7 +261,7 @@ const Dashboard = () => {
                 <AdminBox
                   difference={16}
                   positive={false}
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "auto"}}
                   value={allapprovedPermissionCount}
                   title="Approved Permissions"
                   backgroundColor="#fff4de"
@@ -268,7 +270,7 @@ const Dashboard = () => {
               </Grid>
               <Grid xs={12} sm={6} lg={3}>
                 <AdminBox
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "auto"}}
                   value={allrejectedPermissionCount}
                   title="Rejected Permissions"
                   backgroundColor="#dcfce7"
@@ -277,7 +279,7 @@ const Dashboard = () => {
               </Grid>
               <Grid xs={12} sm={6} lg={3}>
                 <AdminBox
-                  sx={{ height: "100%", width: "250px" }}
+                  sx={{ height: "auto"}}
                   value={allpendingPermissions}
                   title="Pending Permission"
                   backgroundColor="#f1e2ff"
@@ -307,11 +309,11 @@ const Dashboard = () => {
                       ],
                     },
                   ]}
-                  sx={{ height: "100%" }}
+                  sx={{ height: "auto" }}
                 />
               </Grid>
 
-              <Grid width={"50%"} mr={2}>
+              <Grid width={"50%"}>
                 <DashboardPie
                   chartSeries={[
                     Number(ALLPermissions?.length),
@@ -319,65 +321,66 @@ const Dashboard = () => {
                     Number(ALLClaims?.data.length),
                   ]}
                   labels={["Permissions", "Total Claim/Permission", "Claims"]}
-                  sx={{ height: "100%" }}
+                  sx={{ height: "auto" }}
                 />
               </Grid>
             </Box>
           </>
-        </DashboardNew>
+        {/* </DashboardNew> */}
       </PageContainer>
     );
   } else {
     return (
-      <Box
+      <Grid 
         component="main"
         sx={{
           width: "100%",
           flexGrow: 1,
           // py: 8,
-          // pl: 5,
+          // pl: 5, 
         }}
       >
         <Grid>
-          <DashboardNew>
-            <>
+        {/* <DashboardNew> */}
+          <Box>
+            <Box>
               <Box
                 sx={{
                   display: "grid",
                   gridTemplateColumns: "repeat(4, 1fr)",
                   gap: "20px",
-                  bgcolor: "background.paper",
+                  bgcolor: "none",
                   borderRadius: 1,
                   // marginTop: "20px",
                   width: "100%",
                 }}
               >
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <TotalClaim
                     difference={12}
                     positive
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "auto" }}
                     value={claims?.data.length}
                   />
                 </Grid>
 
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <ClaimApproved
                     difference={16}
                     positive={false}
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "auto"}}
                     value={approvedCount}
                   />
                 </Grid>
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <ClaimPending
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "auto" }}
                     value={pending}
                   />
                 </Grid>
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <ClaimRejected
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "auto"}}
                     value={rejectedCount}
                   />
                 </Grid>
@@ -388,38 +391,38 @@ const Dashboard = () => {
                   display: "grid",
                   gridTemplateColumns: "repeat(4, 1fr)",
                   gap: "20px",
-                  bgcolor: "background.paper",
+                  bgcolor: "none",
                   borderRadius: 1,
                   marginTop: "20px",
                   width: "100%",
                 }}
               >
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <TotalPermission
                     difference={12}
                     positive
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "auto", textTransform:"lowercase" }}
                     value={AllPermission?.length}
                   />
                 </Grid>
 
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <PermissionApproved
                     difference={16}
                     positive={false}
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "100%" }}
                     value={approvedPermissionCount}
                   />
                 </Grid>
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <PermissionPending
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "100%" }}
                     value={pending2}
                   />
                 </Grid>
-                <Grid xs={12} sm={6} lg={3}>
+                <Grid item xs={12} sm={6} md={4} lg={3}>
                   <PermissionRejected
-                    sx={{ height: "100%", width: "250px" }}
+                    sx={{ height: "100%" }}
                     value={rejectedPermissionCount}
                   />
                 </Grid>
@@ -455,7 +458,7 @@ const Dashboard = () => {
                   />
                 </Grid>
 
-                <Grid width={"50%"} mr={2}>
+                <Grid width={"50%"}>
                   <DashboardPie
                     chartSeries={[
                       Number(AllPermission?.length),
@@ -467,10 +470,11 @@ const Dashboard = () => {
                   />
                 </Grid>
               </Box>
-            </>
-          </DashboardNew>
+              </Box>
+          </Box>
+           {/* </DashboardNew> */}
         </Grid>
-      </Box>
+      </Grid>
     );
   }
 };

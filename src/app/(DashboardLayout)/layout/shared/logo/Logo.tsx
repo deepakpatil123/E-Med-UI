@@ -12,7 +12,7 @@ const LinkStyled = styled(Link)(() => ({
 
 const Logo = () => {
   return (
-    <LinkStyled href="/dashboard">
+    <LinkStyled href="/">
       <Image
         src="/GovLogo__2_.png"
         alt="logo"

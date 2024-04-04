@@ -640,9 +640,9 @@ const SecClaim = () => {
   }, []);
 
   return (
-    <Grid sx={{ backgroundColor: "white", p: 2, borderRadius: "5px" }}>
-      <Box mb={2}>
-        <Typography variant="h4">
+    <Grid sx={{ backgroundColor: "white", borderRadius: "5px" }}>
+      <Box mb={2} sx={{borderBottom:"1px solid #ccc", padding:"10px"}}>
+        <Typography variant="h5">
           {reimbursementForm
             ? "Reimbursement Form"
             : billEntryForm
@@ -666,7 +666,7 @@ const SecClaim = () => {
           lastForwardedBy={roleOfUser.name}
         />
       ) : claimData.length === 0 ? (
-        <Box py={2} color={"black"} fontWeight={"600"} fontSize={"16px"}>
+        <Box sx={{padding:"10px"}} py={2} color={"black"} fontWeight={"600"} fontSize={"16px"}>
           No Record Found
         </Box>
       ) : (

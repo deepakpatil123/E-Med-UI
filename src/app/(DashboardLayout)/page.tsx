@@ -18,9 +18,9 @@ const Dashboard = () => {
   const [Emp, setEmp] = React.useState(false);
   const [Admin, setAdmin] = React.useState(false);
 
-  // useEffect(() => {
-  //   if (!auth.isAuthenticated) router.push("/");
-  // }, [auth, router]);
+  useEffect(() => {
+    if (!auth.isAuthenticated) router.push("/");
+  }, [auth, router]);
 
   const handleEmpLogin = () => {
     setEmp(true);

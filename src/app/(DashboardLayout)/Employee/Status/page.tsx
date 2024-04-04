@@ -53,7 +53,8 @@ const Status = (props: Props) => {
   }, [user?.data?.emp?._id]);
 
   return (
-    <DashboardNew>
+   
+    // <DashboardNew>
       <>
         <Box
           sx={{
@@ -61,7 +62,7 @@ const Status = (props: Props) => {
             alignItems: "center",
             gap: "10px",
             justifyContent: "space-between",
-            flexDirection: "column",
+            flexDirection: "column", 
           }}
         >
           <Grid width={"100%"} xs={12} md={12} lg={8}>
@@ -80,7 +81,7 @@ const Status = (props: Props) => {
           </Grid>
         </Box>
       </>
-    </DashboardNew>
+    // </DashboardNew>
   );
 };
 

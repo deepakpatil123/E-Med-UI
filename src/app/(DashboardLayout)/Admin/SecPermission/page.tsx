@@ -157,7 +157,7 @@ const SecPermission = () => {
         };
         return (
           <Button onClick={handlePreview} variant="contained">
-            <VisibilityIcon />
+            <VisibilityIcon  />
           </Button>
         );
       },
@@ -321,8 +321,9 @@ const SecPermission = () => {
         return (
           <Chip
             sx={{
-              backgroundColor: "primary.main",
-              color: "#fff",
+              color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px", backgroundColor:"#fff",
+              // backgroundColor: "primary.main",
+              // color: "#fff",
             }}
             size="small"
             label={params.row.relation}
@@ -348,8 +349,8 @@ const SecPermission = () => {
           setPreview(true);
         };
         return (
-          <Button onClick={handlePreview} variant="contained">
-            <VisibilityIcon />
+          <Button onClick={handlePreview}>
+            <VisibilityIcon sx={{color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px"}} />
           </Button>
         );
       },
@@ -361,7 +362,7 @@ const SecPermission = () => {
       headerClassName: "super-app-theme--header",
       renderCell: (info: any) => {
         return (
-          <Button onClick={() => handleClickOpen()} variant="contained">
+          <Button onClick={() => handleClickOpen()} sx={{color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px"}}>
             Remark
           </Button>
         );
@@ -440,19 +441,22 @@ const SecPermission = () => {
         return (
           <Button
             sx={{
-              color: status === "Return" ? "error" : "",
+              // color: status === "Return" ? "error" : "",
+              color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"4px", borderRadius:"3px"
             }}
-            onClick={() => handleSend(info.row)}
-            variant="contained"
+            onClick={() => handleSend(info.row)} 
           >
-            <Typography
+            <Typography 
               sx={{
                 paddingRight: 1,
               }}
             >
               Send
             </Typography>
-            <SendIcon />
+            <SendIcon sx={{
+                width:"15px",
+                height:"15px"
+              }}/>
           </Button>
         );
       },
@@ -771,9 +775,9 @@ const SecPermission = () => {
   }, []);
 
   return (
-    <Grid sx={{ backgroundColor: "white", p: 2, borderRadius: "5px" }}>
-      <Box mb={2}>
-        <Typography variant="h4">Permission List</Typography>
+    <Grid sx={{backgroundColor: "white", p: 1, borderRadius: "5px", boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6", width:"960px" }}>
+      <Box mb={2} sx={{borderBottom:"1px solid #e3e6f0", padding:"10px"}}>
+        <Typography variant="h5">Permission List</Typography>
       </Box>
       {permissionData === 0 ? (
         <Box py={2} color={"black"} fontWeight={"600"} fontSize={"16px"}>

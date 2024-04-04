@@ -34,6 +34,7 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
     backdropFilter: "blur(4px)",
     [theme.breakpoints.up("lg")]: {
       minHeight: "70px",
+      boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 10px 10px 15px -5px #b0b8d6",
     },
   }));
   const ToolbarStyled = styled(Toolbar)(({ theme }) => ({
@@ -55,7 +56,7 @@ const Header = ({ toggleMobileSidebar }: ItemType) => {
           sx={{
             display: {
               lg: "none",
-              xs: "inline",
+              xs: "inline",              
             },
           }}
         >

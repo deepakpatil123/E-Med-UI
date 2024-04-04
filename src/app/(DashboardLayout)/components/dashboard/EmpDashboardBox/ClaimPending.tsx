@@ -16,8 +16,8 @@ export const ClaimPending = (props: any) => {
   const { value, sx } = props;
 
   return (
-    <Card sx={sx}>
-      <CardContent>
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
+      <CardContent sx={{borderLeft:".25rem solid #ffae1f"}}>
         <Stack
           alignItems="flex-start"
           direction="row"
@@ -26,10 +26,12 @@ export const ClaimPending = (props: any) => {
         >
           <Stack spacing={1}>
             <Typography
-              letterSpacing={1}
+              letterSpacing={0.5}
               color="text.secondary"
               gutterBottom
               variant="overline"
+              textTransform='inherit'
+              lineHeight='25px'  
             >
               Total Claims Pending
             </Typography>
@@ -38,8 +40,8 @@ export const ClaimPending = (props: any) => {
           <Avatar
             sx={{
               backgroundColor: "warning.main",
-              height: 56,
-              width: 56,
+              height: 45,
+              width: 45,
             }}
           >
             <SvgIcon>

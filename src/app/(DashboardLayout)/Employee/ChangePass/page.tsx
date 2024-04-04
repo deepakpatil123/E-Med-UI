@@ -88,11 +88,12 @@ const ChangePass = () => {
           flexGrow: 1,
           p: 4,
           borderRadius: "5px",
+          boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6"
         }}
         m={6}
       >
         <Box mb={3}>
-          <Typography variant="h4">Change Password</Typography>
+          <Typography variant="h5">Change Password</Typography>
         </Box>
         <form onSubmit={handleSubmit}>
           <Grid container spacing={2}>

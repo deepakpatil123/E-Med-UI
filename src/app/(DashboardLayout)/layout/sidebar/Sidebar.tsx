@@ -21,15 +21,13 @@ const Sidebar = ({
   const lgUp = useMediaQuery((theme: any) => theme.breakpoints.up("lg"));
 
   const [roleNum, setRoleNum] = useState([]);
-  const sidebarWidth = "290px";
+  const sidebarWidth = "275px";
 
   const auth: any = useAuth();
 
   const roleID = auth?.user?.data?.user?.role;
 
-  console.log(auth?.user,"roleID")
-  console.log(roleNum,"rolenumber")
-  const role = auth?.user?.message?.includes("User");
+  const role = auth?.user?.message?.includes("Admin");
 
   const fetchFun = async () => {
     const res: any = await axios.get(
@@ -39,7 +37,7 @@ const Sidebar = ({
     setRoleNum(res.data.data);
   };
 
-  const roleOfUser: any = auth?.user?.data?.body?.user?.role;
+  const roleOfUser: any = roleNum.find((e: any) => e._id === roleID);
 
   useEffect(() => {
     fetchFun();
@@ -62,13 +60,15 @@ const Sidebar = ({
             sx: {
               width: sidebarWidth,
               boxSizing: "border-box",
+              backgroundColor:"#2847a2",
+              color:"#fff"
             },
           }}
         >
           {/* Sidebar Box */}
           <Box
             sx={{
-              height: "100%",
+              height: "100%", 
             }}
           >
             {role ? (

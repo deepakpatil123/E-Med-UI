@@ -34,7 +34,7 @@ const mobileValidationRegex =
 function EmpLogin({ back }: any) {
   const auth = useAuth();
   const router = useRouter();
-  const [userName, setUserName] = useState<any>();
+  const [userName, setUserName] = useState<number>();
   const [inputCaptcha, setInputCaptcha] = useState<any>("");
   const [captchaCode, SetCaptchaCode] = useState<any>("");
   const [tryagain, setTryagain] = useState<any>(false);
@@ -240,7 +240,7 @@ function EmpLogin({ back }: any) {
               marginBottom: "8px",
               mt: 2,
             }}
-            onChange={(e: any) => setUserName(e.target.value)}
+            onChange={(e: any) => setUserName(Number(e.target.value))}
           />
 
           <Typography variant="body1" sx={{ lineHeight: "9px", mt: 1 }}>
