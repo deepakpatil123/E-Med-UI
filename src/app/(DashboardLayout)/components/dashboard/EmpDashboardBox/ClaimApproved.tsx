@@ -14,8 +14,8 @@ export const ClaimApproved = (props: any) => {
   const { difference, positive = false, sx, value } = props;
 
   return (
-    <Card sx={sx}>
-      <CardContent>
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
+      <CardContent sx={{borderLeft:".25rem solid #13deb9"}}>
         <Stack
           alignItems="flex-start"
           direction="row"
@@ -24,19 +24,21 @@ export const ClaimApproved = (props: any) => {
         >
           <Stack spacing={1}>
             <Typography
-              letterSpacing={1}
+              letterSpacing={0.5}
               color="text.secondary"
               variant="overline"
+              textTransform='inherit'
+              lineHeight='25px' 
             >
               Total Claims Approved
             </Typography>
-            <Typography variant="h4">{isNaN(value) ? 0 : value}</Typography>
+            <Typography variant="h4">{`${value}`}</Typography>
           </Stack>
           <Avatar
             sx={{
               backgroundColor: "success.main",
-              height: 56,
-              width: 56,
+              height: 45,
+              width: 45,
             }}
           >
             <SvgIcon>

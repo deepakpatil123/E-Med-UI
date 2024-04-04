@@ -15,29 +15,31 @@ export const PermissionRejected = (props: any) => {
   // const stringValur = value.toString();
 
   return (
-    <Card sx={sx}>
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
       <CardContent>
         <Stack
           alignItems="flex-start"
           direction="row"
           justifyContent="space-between"
-          spacing={3}
+          spacing={1}
         >
-          <Stack spacing={1}>
+          <Stack spacing={0.5}>
             <Typography
               letterSpacing={1}
               color="text.secondary"
               variant="overline"
+              textTransform='capitalize'
+              lineHeight='25px' 
             >
-              Number of Permission Rejected
+              No. of Permission Rejected
             </Typography>
-            <Typography variant="h4">{isNaN(value) ? 0 : value}</Typography>
+            <Typography variant="h4">{value}</Typography>
           </Stack>
           <Avatar
             sx={{
               backgroundColor: "primary.main",
-              height: 56,
-              width: 56,
+              height: 45,
+              width: 45,
             }}
           >
             <SvgIcon>

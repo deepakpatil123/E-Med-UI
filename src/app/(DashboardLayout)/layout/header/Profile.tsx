@@ -74,12 +74,16 @@ const Profile = () => {
             <IconUser width={20} />
           </ListItemIcon>
           <ListItemText>
-            {auth?.user?.data?.body?.user?.name}
+            {auth?.user?.data?.emp
+              ? auth?.user?.data?.emp.name
+              : auth?.user?.data?.user.name}
           </ListItemText>
         </MenuItem>
         <MenuItem>
           <ListItemText>
-            {auth?.user?.data?.body?.user?.role?.name}
+            {auth?.user?.data?.emp
+              ? auth?.user?.data?.emp.name
+              : auth?.user?.data?.user.name}
           </ListItemText>
         </MenuItem>
         <Box mt={1} py={1} px={2}>
@@ -96,7 +100,7 @@ const Profile = () => {
           <Button
             onClick={() =>
               auth?.signOut(
-                auth?.user?.message?.includes("User") ? "admin" : "employee"
+                auth?.user?.message?.includes("Admin") ? "admin" : "employee"
               )
             }
             variant="outlined"

@@ -14,19 +14,22 @@ export const AdminBox = (props: any) => {
   const { sx, value, title, backgroundColor, icon } = props;
 
   return (
-    <Card sx={sx}>
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6"}}>
       <CardContent>
         <Stack
           alignItems="flex-start"
           direction="row"
           justifyContent="space-between"
-          spacing={3}
+          spacing={1}
         >
           <Stack spacing={1}>
             <Typography
-              letterSpacing={1}
-              color="text.secondary"
-              variant="overline"
+              letterSpacing={0.5}
+              // color="text.secondary"
+              variant="overline" 
+              color="text.secondary" 
+              textTransform='inherit'
+              lineHeight='25px' 
             >
               {title}
             </Typography>
@@ -37,8 +40,8 @@ export const AdminBox = (props: any) => {
               backgroundColor: { backgroundColor },
               color: "black",
               border: "4px solid lightgrey",
-              height: 56,
-              width: 56,
+              height: 42,
+              width: 42,
             }}
           >
             <SvgIcon>{icon}</SvgIcon>

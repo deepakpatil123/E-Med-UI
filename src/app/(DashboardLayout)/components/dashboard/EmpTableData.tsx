@@ -66,21 +66,21 @@ export const OverviewLatestOrders = (props: any) => {
     fn();
   };
   return (
-    <Card sx={sx}>
-      <CardHeader title="Applied Permission" />
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
+      <CardHeader sx={{borderBottom:"1px solid #e3e6f0"}} title="Applied Permission" />
       <Box sx={{ minWidth: 700 }}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell sx={{ fontWeight: "700" }}>S No.</TableCell>{" "}
-              <TableCell sx={{ fontWeight: "700" }}>Name</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>Designation</TableCell>
-              <TableCell sx={{ fontWeight: "700" }} sortDirection="desc">
+              <TableCell sx={{ fontWeight: "600" }}>S No.</TableCell>{" "}
+              <TableCell sx={{ fontWeight: "600" }}>Name</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>Designation</TableCell>
+              <TableCell sx={{ fontWeight: "600" }} sortDirection="desc">
                 Relation
               </TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>Current Status</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>More Details</TableCell>
-              <TableCell sx={{ fontWeight: "700" }}>
+              <TableCell sx={{ fontWeight: "600" }}>Current Status</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>More Details</TableCell>
+              <TableCell sx={{ fontWeight: "600" }}>
                 Delete Permission
               </TableCell>
             </TableRow>
@@ -111,7 +111,7 @@ export const OverviewLatestOrders = (props: any) => {
                           setCurrentPerm(order);
                         }}
                       >
-                        <VisibilityIcon />
+                        <VisibilityIcon sx={{color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px"}} />
                       </IconButton>
                     </TableCell>
                     {order.currentStatus === "Open" ? (
@@ -122,7 +122,7 @@ export const OverviewLatestOrders = (props: any) => {
                           }}
                           onClick={() => handleDeletePermission(order._id)}
                         >
-                          <DeleteIcon />
+                          <DeleteIcon sx = {{color:"#f00", border:"1px solid #f00", padding:"2px", borderRadius:"3px"}} />
                         </IconButton>
                       </TableCell>
                     ) : (

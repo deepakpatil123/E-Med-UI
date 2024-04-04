@@ -316,7 +316,6 @@ function PermissionForm({ close, family, empData, aso }: any) {
         }
       }
 
-      console.log(fd);
       const config = {
         url: `/api/medical/applyPermission/${EmpId}`,
         method: "POST",
@@ -413,7 +412,7 @@ function PermissionForm({ close, family, empData, aso }: any) {
             },
           });
           setFormData(response.data);
-
+          
           close();
         }
       } else {
@@ -1083,19 +1082,15 @@ function PermissionForm({ close, family, empData, aso }: any) {
                       id="file-upload"
                       type="file"
                       hidden
-                      accept="application/pdf"
+                      accept=".png,.jpeg,.pdf"
                       onChange={(e: any) => {
-                        console.log(e.target.files);
-                        if (
-                          e.target.files[0]?.size > 5 * 1000 * 1024 ||
-                          e.target.files[0].type != "application/pdf"
-                        ) {
-                          alert("Upload Only PDF (Below 5 MB)");
-                          return;
+                        if (e.target.files[0].size > 5 * 1000 * 1024) {
+                          alert("Upload File Below 5 MB");
                         } else {
                           setFile(e.target.files[0]);
-                          console.log(file);
                         }
+
+                        console.log(e.target.files[0].size);
                       }}
                     />
                   </label>{" "}

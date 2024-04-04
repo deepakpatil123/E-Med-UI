@@ -137,6 +137,7 @@ const PermissionList = () => {
               borderRadius: "6px",
               width: "300px",
               margin: "5px",
+              boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6",
             }}
           >
             <Box>
@@ -197,6 +198,7 @@ const PermissionList = () => {
                 borderRadius: "6px",
                 width: "300px",
                 margin: "5px",
+                boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6",
               }}
             >
               <Box>

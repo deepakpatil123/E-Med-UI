@@ -85,11 +85,11 @@ export const DashboardPie = (props: any) => {
   const chartOptions = useChartOptions(labels);
 
   return (
-    <Card sx={sx}>
-      <CardHeader title="Total Files" />
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
+      <CardHeader title="Total Files" sx={{borderBottom:"1px solid #e3e6f0"}} />
       <CardContent>
         <Chart
-          height={350}
+          height={310}
           options={chartOptions}
           series={chartSeries}
           type="pie"

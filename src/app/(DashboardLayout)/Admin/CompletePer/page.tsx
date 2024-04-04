@@ -28,9 +28,6 @@ function CompletedFiles() {
   const [preview, setPreview] = useState(false);
   const [open, setOpen] = React.useState(false);
 
-  const handlePreviewClose = () => {
-    setPreview(false);
-  };
   const handleOpen: any = () => {
     setOpen(!open);
   };
@@ -200,7 +197,7 @@ function CompletedFiles() {
             >
               X
             </Button>
-            <Preview data={info} onClose={handlePreviewClose} />
+            <Preview data={info} />
           </Box>
         </Dialog>
 

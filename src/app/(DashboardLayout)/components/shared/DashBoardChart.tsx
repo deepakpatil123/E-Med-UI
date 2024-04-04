@@ -100,8 +100,8 @@ export const DashBoardChart = (props: any) => {
   const chartOptions = useChartOptions();
 
   return (
-    <Card sx={sx}>
-      <CardHeader title="Year Wise Permissions" />
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
+      <CardHeader title="Year Wise Permissions" sx={{borderBottom:"1px solid #e3e6f0"}}/>
       <CardContent>
         <Chart
           height={300}

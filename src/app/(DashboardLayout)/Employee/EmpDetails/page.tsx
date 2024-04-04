@@ -111,7 +111,7 @@ const EmployeeDetails = (props: any) => {
         <Typography variant="h4">Employee details</Typography>
       </Box>
       <MainBox>
-        <LeftBox sx={{ position: "relative" }}>
+        <LeftBox sx={{ position: "relative", boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6" }}>
           <Box sx={{ position: "absolute", top: 5, right: "10px" }}>
             <IconButton
               sx={{
@@ -161,7 +161,7 @@ const EmployeeDetails = (props: any) => {
           </Box>
         </LeftBox>
 
-        <RightBox>
+        <RightBox sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6"}}>
           <InsideDiv></InsideDiv>
           <InsideDiv>
             <DetailBox>

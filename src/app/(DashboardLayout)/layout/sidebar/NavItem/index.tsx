@@ -38,13 +38,15 @@ const NavItem = ({ item, level, pathDirect, onClick }: ItemType) => {
   const ListItemStyled = styled(ListItem)(() => ({
     padding: 0,
     ".MuiButtonBase-root": {
-      whiteSpace: "nowrap",
-      marginBottom: "3px",
+      whiteSpace: "nowrap", 
+      marginBottom: "3px", 
       padding: "5px 8px",
       borderRadius: "10px",
+      fontSize:"30px",
       backgroundColor: level > 1 ? "transparent !important" : "inherit",
-      color: theme.palette.text.secondary,
-      paddingLeft: "10px",
+      // color: theme.palette.text.secondary,
+      color: '#fff',
+      paddingLeft: "10px", 
       "&:hover": {
         backgroundColor: theme.palette.primary.light,
         color: theme.palette.primary.main,

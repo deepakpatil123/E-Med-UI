@@ -20,7 +20,7 @@ const PageWrapper = styled("div")(() => ({
   paddingBottom: "60px",
   flexDirection: "column",
   zIndex: 1,
-  backgroundColor: "#efefef",
+  backgroundColor: "#f0f3f7",
 }));
 
 interface Props {
@@ -56,11 +56,11 @@ export default function RootLayout({
               sx={{ display: "none" }}
             />
 
-            <Container
+            <Container 
               sx={{
                 flex: 1,
                 my: 2,
-              }}
+              }} 
             >
               <Box sx={{ minHeight: "calc(100vh - 170px)" }}>{children}</Box>
             </Container>

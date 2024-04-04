@@ -93,17 +93,17 @@ const FamilyDetails = () => {
       {familyDataArr.length !== 0
         ? familyDataArr.map((member: any, index: any) => (
             <MainBox key={index}>
-              <LeftBox>
+              <LeftBox sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6"}}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`${BACKEND_BASE_URL}/uploads/${cards[index]}`}
                   width={320}
                   height={150}
                   alt={"no image found"}
-                  color="white"
+                  color="white" 
                 />
               </LeftBox>
-              <RightBox>
+              <RightBox sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6"}}>
                 <InsideDiv>
                   <DetailBox>
                     <Bold>Relation :</Bold>

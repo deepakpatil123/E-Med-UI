@@ -14,29 +14,31 @@ export const PermissionApproved = (props: any) => {
   const { difference, positive = false, sx, value } = props;
 
   return (
-    <Card sx={sx}>
+    <Card sx={{boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%), 2px -4px 10px -5px #b0b8d6"}}>
       <CardContent>
         <Stack
-          alignItems="flex-start"
+          // alignItems="flex-start"
           direction="row"
-          justifyContent="space-between"
+          // justifyContent="space-between"
           spacing={3}
         >
           <Stack spacing={1}>
             <Typography
-              letterSpacing={1}
+              letterSpacing={0.5}
               color="text.secondary"
               variant="overline"
+              textTransform='capitalize'
+              lineHeight='25px' 
             >
               Total Permissions Approved
             </Typography>
-            <Typography variant="h4">{isNaN(value) ? 0 : value}</Typography>
+            <Typography variant="h4">{`${value}`}</Typography>
           </Stack>
           <Avatar
             sx={{
               backgroundColor: "success.main",
-              height: 56,
-              width: 56,
+              height: 45,
+              width: 45,
             }}
           >
             <SvgIcon>
