@@ -34,7 +34,7 @@ const mobileValidationRegex =
   /^((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}$/;
 
 function AdminLogin({ back }: any) {
-  const auth = useAuth();
+  const auth:any = useAuth();
   const router = useRouter();
   const [branch, setBranch] = useState<any>("all");
   const [userName, setUserName] = useState<any>("");
@@ -80,7 +80,7 @@ function AdminLogin({ back }: any) {
       return;
     }
 
-    const res: any = await auth.signIn(userName, password, "admin");
+    const res: any = await auth.signInAdmin(userName, password, "admin");
 
     if (res.success) {
       enqueueSnackbar(res.message, {
