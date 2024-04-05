@@ -37,7 +37,10 @@ const SecClaim = () => {
     "Closed after Approval",
   ];
   const auth: any = useAuth();
-  const roleID = auth?.user?.user?.role?.id;
+  // const roleID = auth?.user?.user?.role?.id;
+
+  const roleID = auth?.user?.data?.body?.user?.role?.name;
+
 
   const [claimData, setClaimData] = useState<any>([]);
   const [reimbursementForm, setReimbursementForm] = useState(false);
@@ -66,6 +69,9 @@ const SecClaim = () => {
     }
   };
 
+
+  console.log(claimData,"claimDataF")
+  
   const diaryEntryColumns: GridColDef[] = [
     {
       field: "id",

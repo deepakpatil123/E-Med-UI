@@ -115,11 +115,11 @@ export default function AuthProvider({ children }: AuthProviderProps) {
       if (pathname === "/") router.push("/dashboard");
     } else if (xml) {
       console.log("in")
-      // signInAdmin();
+      signInAdmin();
     } 
     else {
       console.log("out")
-      // signOut();
+      signOut();
     }
   }
   initialize();

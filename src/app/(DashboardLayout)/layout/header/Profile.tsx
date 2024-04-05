@@ -25,6 +25,9 @@ const Profile = () => {
     setAnchorEl2(null);
   };
 
+
+  console.log(auth, "AUTHHHHHHH")
+
   const router = useRouter();
 
   return (
@@ -73,10 +76,15 @@ const Profile = () => {
           <ListItemIcon>
             <IconUser width={20} />
           </ListItemIcon>
-          <ListItemText>{auth?.user?.user?.name}</ListItemText>
+          <ListItemText>
+            {auth?.user?.data?.body.user.name}
+          </ListItemText>
         </MenuItem>
         <MenuItem>
-          <ListItemText>{auth?.user?.user?.email_id}</ListItemText>
+          <ListItemText>
+          {auth?.user?.data?.body.user.email_id}
+
+          </ListItemText>
         </MenuItem>
         <Box mt={1} py={1} px={2}>
           <Button
@@ -90,7 +98,11 @@ const Profile = () => {
         </Box>
         <Box mt={1} py={1} px={2}>
           <Button
-            onClick={() => auth?.signOut()}
+            onClick={() =>
+              auth?.signOut(
+                auth?.user?.message?.includes("Admin") ? "admin" : "employee"
+              )
+            }
             variant="outlined"
             color="primary"
             fullWidth

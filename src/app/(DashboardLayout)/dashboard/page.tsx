@@ -175,7 +175,7 @@ const Dashboard = () => {
 
   if (!auth?.user?.message) {
     return <p>Loading....</p>;
-  } else if (auth?.user?.message?.includes("user")) {
+  } else if (auth?.user?.message?.includes("User")) {
     return (
       <PageContainer title="Welcome to Dashboard" description="">
         {/* <DashboardNew> */}

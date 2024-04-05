@@ -26,7 +26,7 @@ import PermissionForm from "../../components/forms/PermissionForm/PermissionForm
 
 const SecPermission = () => {
   const auth: any = useAuth();
-  const roleID = auth?.user?.user?.role?.id;
+  const roleID = auth?.user?.data?.body?.user?.role?.name;
   const [perform, setPerForm] = useState(false);
   const [roles, setroles] = useState([]);
   const [roleNum, setRoleNum] = useState([]);
@@ -55,7 +55,7 @@ const SecPermission = () => {
   };
   const [permissionData, setPermissionData] = useState<any>([]);
 
-  const roleOfUser: any = roleNum.find((e: any) => e.id === roleID);
+  const roleOfUser: any = roleNum.find((e: any) => e.name === roleID);
 
   const [remark, setRemark] = useState("");
   const [status, setStatus] = useState("");
@@ -157,7 +157,7 @@ const SecPermission = () => {
         };
         return (
           <Button onClick={handlePreview} variant="contained">
-            <VisibilityIcon  />
+            <VisibilityIcon />
           </Button>
         );
       },
@@ -321,7 +321,11 @@ const SecPermission = () => {
         return (
           <Chip
             sx={{
-              color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px", backgroundColor:"#fff",
+              color: "#4ba9e1",
+              border: "1px solid #4ba9e1",
+              padding: "2px",
+              borderRadius: "3px",
+              backgroundColor: "#fff",
               // backgroundColor: "primary.main",
               // color: "#fff",
             }}
@@ -350,7 +354,14 @@ const SecPermission = () => {
         };
         return (
           <Button onClick={handlePreview}>
-            <VisibilityIcon sx={{color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px"}} />
+            <VisibilityIcon
+              sx={{
+                color: "#4ba9e1",
+                border: "1px solid #4ba9e1",
+                padding: "2px",
+                borderRadius: "3px",
+              }}
+            />
           </Button>
         );
       },
@@ -362,7 +373,15 @@ const SecPermission = () => {
       headerClassName: "super-app-theme--header",
       renderCell: (info: any) => {
         return (
-          <Button onClick={() => handleClickOpen()} sx={{color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"2px", borderRadius:"3px"}}>
+          <Button
+            onClick={() => handleClickOpen()}
+            sx={{
+              color: "#4ba9e1",
+              border: "1px solid #4ba9e1",
+              padding: "2px",
+              borderRadius: "3px",
+            }}
+          >
             Remark
           </Button>
         );
@@ -442,21 +461,26 @@ const SecPermission = () => {
           <Button
             sx={{
               // color: status === "Return" ? "error" : "",
-              color:"#4ba9e1", border:"1px solid #4ba9e1", padding:"4px", borderRadius:"3px"
+              color: "#4ba9e1",
+              border: "1px solid #4ba9e1",
+              padding: "4px",
+              borderRadius: "3px",
             }}
-            onClick={() => handleSend(info.row)} 
+            onClick={() => handleSend(info.row)}
           >
-            <Typography 
+            <Typography
               sx={{
                 paddingRight: 1,
               }}
             >
               Send
             </Typography>
-            <SendIcon sx={{
-                width:"15px",
-                height:"15px"
-              }}/>
+            <SendIcon
+              sx={{
+                width: "15px",
+                height: "15px",
+              }}
+            />
           </Button>
         );
       },
@@ -735,6 +759,7 @@ const SecPermission = () => {
     const res: any = await axios.get(
       `${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/api/medical/getAllRole`
     );
+
     setRoleNum(res.data.data);
   };
 
@@ -750,10 +775,9 @@ const SecPermission = () => {
               i.movement.length === 1 ||
               i.lastForwardedTo === "Diary Entry - Admin IV"
           )
-        : res.data.data.filter(
-            (i: any) =>
-              i.lastForwardedTo && i.lastForwardedTo === roleOfUser?.name
-          );
+        : res.data.data.filter((i: any) => {
+            return i.lastForwardedTo && i.lastForwardedTo === roleOfUser?.name;
+          });
 
     const reqRes = filterrRes.map((i: any, index: any) => ({
       ...i,
@@ -761,6 +785,7 @@ const SecPermission = () => {
       createdAt: i.createdAt.slice(0, 10),
       lastForwardedTo: "",
     }));
+
 
     setPermissionData(reqRes);
   };
@@ -775,8 +800,17 @@ const SecPermission = () => {
   }, []);
 
   return (
-    <Grid sx={{backgroundColor: "white", p: 1, borderRadius: "5px", boxShadow:"0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6", width:"960px" }}>
-      <Box mb={2} sx={{borderBottom:"1px solid #e3e6f0", padding:"10px"}}>
+    <Grid
+      sx={{
+        backgroundColor: "white",
+        p: 1,
+        borderRadius: "5px",
+        boxShadow:
+          "0 10px 10px 20px rgb(176 184 214 / 9%),2px -4px 10px -5px #b0b8d6",
+        width: "960px",
+      }}
+    >
+      <Box mb={2} sx={{ borderBottom: "1px solid #e3e6f0", padding: "10px" }}>
         <Typography variant="h5">Permission List</Typography>
       </Box>
       {permissionData === 0 ? (

@@ -23,7 +23,7 @@ const SidebarItems = ({ toggleMobileSidebar, role }: any) => {
       <List sx={{ pt: 0 }} className="sidebarNav" component="div">
         {!userRole ? (
           <p>Loading....</p>
-        ) : userRole && userRole.includes("user") ? (
+        ) : userRole && userRole.includes("User") ? (
           adminMenu?.map((item: any) => (
             <NavItem
               item={item}
