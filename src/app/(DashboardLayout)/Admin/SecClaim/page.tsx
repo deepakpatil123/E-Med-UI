@@ -36,6 +36,7 @@ const SecClaim = () => {
     "Not Approved",
     "Closed after Approval",
   ];
+  
   const auth: any = useAuth();
   // const roleID = auth?.user?.user?.role?.id;
 
